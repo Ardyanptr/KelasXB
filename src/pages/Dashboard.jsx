@@ -1,5 +1,7 @@
 import { useEffect ,useState } from 'react';
 import { supabase } from '../lib/supabase'
+import DashboardTerminal from '../components/DashboardTerminal.jsx'
+import { motion, AnimatePresence } from 'motion/react'
 
 export default function Dashboard({ onClose }) {
   const [activeTab, setActiveTab] = useState('overview');
@@ -383,6 +385,7 @@ export default function Dashboard({ onClose }) {
     { id: 'kisi', label: 'Kisi-kisi', icon: '📌' },
     { id: 'jadwal', label: 'Jadwal', icon: '⏰' },
     { id: 'gallery', label: 'Gallery', icon: '🖼️' },
+    { id: 'terminal', label: 'Terminal', icon: '⌨️' },
     { id: 'settings', label: 'Settings', icon: '⚙️' },
   ];
 
@@ -706,6 +709,25 @@ export default function Dashboard({ onClose }) {
                 </div>
               ))}
             </div>
+          </div>
+        )}
+
+        {/* TERMINAL TAB */}
+        {activeTab === 'terminal' && (
+          <div className="space-y-5">
+            <div>
+              <div className="flex items-center gap-3">
+                <span className="text-2xl">⌨️</span>
+                <div>
+                  <h1 className="text-3xl font-bold">Terminal</h1>
+                  <p className="text-black/60 text-sm mt-0.5">
+                    CLI langsung ke Supabase — query, reload, dan kelola data kelas dari sini.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <DashboardTerminal />
           </div>
         )}
 
