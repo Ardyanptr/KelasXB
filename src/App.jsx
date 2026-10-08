@@ -167,7 +167,7 @@ function App() {
                 {isPengurus && (
                   <button
                     onClick={() => setShowDashboard(!showDashboard)}
-                    className="hidden rounded-full border border-black px-4 py-2 text-sm font-medium transition hover:bg-black hover:text-white sm:block"
+                    className="rounded-full border border-black px-3 py-1.5 text-xs font-medium transition hover:bg-black hover:text-white sm:px-4 sm:py-2 sm:text-sm"
                   >
                     {showDashboard ? 'Beranda' : 'Dashboard'}
                   </button>
