@@ -606,6 +606,8 @@ function App() {
             pauseOnHover
           />
 
+          <h1 className="text-center flex justify-center font-roboto">Klik dan tahan</h1>
+
           <div className="justify-center flex items-center">
             <FolderFloat
               items={['Bu Ratna', 'Bu Ratna', 'Bu Ratna', 'Bu Ratna', 'Bu Ratna',]}
