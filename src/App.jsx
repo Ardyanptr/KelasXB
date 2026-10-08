@@ -8,6 +8,8 @@ import SplitText from './components/SplitText.jsx'
 import FlexCarousel from './components/FlexCarousel.jsx'
 import FlipCard from './components/FlipCard.jsx'
 import Stepper, { Step } from './components/Stepper.jsx'
+import TextLoop from './components/TextLoop.jsx'
+import FolderFloat from './components/FolderFloat.jsx'
 
 // New Interactive Widgets & Audio
 import RandomPickerWheel from './components/RandomPickerWheel.jsx'
@@ -584,6 +586,54 @@ function App() {
                 <p>udah bener kan? datamu ke record ke database loh nanti</p>
               </Step>
             </Stepper>
+          </div>
+
+          <TextLoop
+            text="BHUVANASURA"
+            shape="wave"
+            speed={90}
+            direction="forward"
+            separator="✦"
+            curviness={90}
+            fontSize={46}
+            fontWeight={800}
+            letterSpacing={2}
+            uppercase
+            color="#ffffff"
+            ribbon
+            ribbonColor="#5227FF"
+            ribbonWidth={86}
+            pauseOnHover
+          />
+
+          <div className="justify-center flex items-center">
+            <FolderFloat
+              items={['Bu Ratna', 'Bu Ratna', 'Bu Ratna', 'Bu Ratna', 'Bu Ratna',]}
+              label="Beloved People"
+              sublabel="5 notes"
+              trigger="hover"
+              closeOnSelect
+              physics
+              drift={0.5}
+              onSelect={(value, index) => console.log(value, index)}
+              folderColor="#3f3f46"
+              frontColor="#52525b"
+              paperColor="#f5f5f5"
+              itemColor="#f5f5f5"
+              itemTextColor="#18181b"
+              labelColor="#f5f5f5"
+              width={200}
+              height={148}
+              radius={14}
+              spread={180}
+              lift={26}
+              tilt={8}
+              flapAngle={34}
+              restAngle={16}
+              openDuration={520}
+              stagger={45}
+              bounce={0.3}
+            />
           </div>
 
           {/* FOOTER */}
