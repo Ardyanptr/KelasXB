@@ -102,7 +102,7 @@ export default function RandomPickerWheel() {
               {spinning ? CLASS_MEMBERS[displayIndex] : 'Klik "Acak Sekarang" untuk Memulai'}
             </h4>
             <p className="text-xs text-zinc-500">
-              {spinning ? 'Mengacak dari 24 anggota kelas...' : 'Pilihan dilakukan secara acak & adil.'}
+              {spinning ? 'Mengacak dari 36 anggota kelas...' : 'Pilihan dilakukan secara acak & adil.'}
             </p>
           </div>
         )}
