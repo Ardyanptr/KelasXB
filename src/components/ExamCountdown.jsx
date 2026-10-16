@@ -27,11 +27,10 @@ export default function ExamCountdown({ tasks = [], exams = [], onOpenModal }) {
       }
     });
 
-    // Fallback default if no future items in database yet
     if (events.length === 0) {
       const defaultDate = new Date();
       defaultDate.setDate(defaultDate.getDate() + 3);
-      events.push({ title: 'Ulangan Tengah Semester', date: defaultDate, type: 'Ulangan', topic: 'Persiapan UTS X-B' });
+      events.push({ title: 'Tidak ada data', date: defaultDate, type: '404', topic: 'Failed to fetch data' });
     }
 
     events.sort((a, b) => a.date - b.date);
@@ -63,12 +62,11 @@ export default function ExamCountdown({ tasks = [], exams = [], onOpenModal }) {
   if (!targetEvent) return null;
 
   return (
-    <div className="w-full rounded-3xl bg-white text-black p-6 sm:p-8 shadow-xl border border-white/10 relative overflow-hidden">
+    <div className="w-full rounded-b-3xl bg-white text-black p-6 sm:p-8 shadow-md shadow- border border-white/10 relative overflow-hidden">
       <div className="flex flex-col md:flex-row md:items-center justify-between gap-6">
         <div>
           <div className="flex items-center gap-2">
-            <span className="w-2.5 h-2.5 rounded-full bg-red-500 animate-ping" />
-            <span className="text-xs font-semibold tracking-widest uppercase text-red-400 bg-red-500/10 px-3 py-1 rounded-full border border-red-500/20">
+            <span className="text-xs font-semibold tracking-widest uppercase text-red-700 px-3 py-1 border-2 rounded-t-xl border-red-500/20">
               Tenggat terdekat
             </span>
           </div>
@@ -76,11 +74,10 @@ export default function ExamCountdown({ tasks = [], exams = [], onOpenModal }) {
             {targetEvent.title}
           </h3>
           <p className="text-xs text-zinc-400 mt-1">
-            {targetEvent.topic ? `${targetEvent.topic}` : 'Mari persiapkan diri bersama-sama!'}
+            {targetEvent.topic ? `${targetEvent.topic}` : 'Tidak ada topik'}
           </p>
         </div>
 
-        {/* TIMER COUNTER BOXES */}
         <div className="grid grid-cols-4 gap-2 sm:gap-3 text-center">
           {[
             { label: 'HARI', val: timeLeft.days },

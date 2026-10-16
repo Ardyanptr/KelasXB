@@ -51,9 +51,6 @@ export default function RandomPickerWheel() {
     <div className="w-full rounded-3xl bg-white text-black p-6 sm:p-8 border border-white/10 shadow-xl overflow-hidden relative">
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
         <div>
-          <span className="text-[11px] font-semibold tracking-widest uppercase text-emerald-400 bg-emerald-400/10 px-3 py-1 rounded-full border border-emerald-400/20">
-            Spin Wheel
-          </span>
           <h3 className="text-2xl font-bold tracking-tight mt-2">Spin & Pick Acak Siswa</h3>
           <p className="text-xs text-zinc-400 mt-1">
             Pilihan acak sesuai dengan data yang tersedia
@@ -70,13 +67,12 @@ export default function RandomPickerWheel() {
           }`}
         >
           {spinning ? (
-            <>
+            <>          
               <span className="w-4 h-4 border-2 border-black border-t-transparent rounded-full animate-spin" />
-              <span>Memutar...</span>
             </>
           ) : (
             <>
-              <span>Acak Sekarang!</span>
+              <span>Acak</span>
             </>
           )}
         </button>
@@ -96,14 +92,8 @@ export default function RandomPickerWheel() {
         ) : (
           <div className="space-y-2">
             <span className="text-5xl opacity-80 transition-transform duration-100">
-              {spinning ? CLASS_MEMBERS[displayIndex] : '👤'}
+              {spinning ? CLASS_MEMBERS[displayIndex] : ''}
             </span>
-            <h4 className="text-2xl font-bold text-zinc-300">
-              {spinning ? CLASS_MEMBERS[displayIndex] : 'Klik "Acak Sekarang" untuk Memulai'}
-            </h4>
-            <p className="text-xs text-zinc-500">
-              {spinning ? 'Mengacak dari 36 anggota kelas...' : 'Pilihan dilakukan secara acak & adil.'}
-            </p>
           </div>
         )}
       </div>

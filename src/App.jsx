@@ -217,8 +217,8 @@ function App() {
   // For Carousel - dynamically import asset images for Vite bundler safety
   const items = Array.from({ length: 28 }, (_, i) => ({
     src: new URL(`./assets/Pic/${i + 1}.jpg`, import.meta.url).href,
-    alt: `Momen X-B ${i + 1}`,
-    title: i === 0 ? 'Gema Pemilu' : i === 4 ? 'Keke & Riksi' : `Momen ${i + 1}`,
+    alt: `${i + 1}`,
+    title: i === 0 ? 'Gema Pemilu' : i === 4 ? 'Keke & Riksi' : `${i + 1}`,
   }))
 
   const logoImg = new URL('./assets/Pic/logo.jpg', import.meta.url).href
@@ -255,8 +255,7 @@ function App() {
               className="rounded-full border border-black/10 px-3 py-1.5 text-xs font-semibold transition active:scale-95 hover:bg-black/5 flex items-center gap-1.5 touch-manipulation"
               title="Aktifkan / Matikan Suara Interactive"
             >
-              <span>{soundOn ? '🔊' : '🔈'}</span>
-              <span className="hidden sm:inline">{soundOn ? 'Suara ON' : 'Suara OFF'}</span>
+              <span>{soundOn ? 'Mute' : 'Sound'}</span>
             </button>
 
             {user ? (
@@ -303,9 +302,7 @@ function App() {
           <section className="mx-auto max-w-6xl px-5 pt-12 sm:pt-20">
             <div className="max-w-3xl">
               <div className="inline-flex items-center gap-2 mb-4 px-3 py-1 rounded-full bg-black/5 border border-black/10 text-xs font-semibold uppercase tracking-[0.15em] text-black/70">
-                <span>🏫 SMA Negeri 1 Pandaan</span>
-                <span>•</span>
-                <span>Class X-B</span>
+                <span>SMA Negeri 1 Pandaan</span>
               </div>
 
               <SplitText 
@@ -334,28 +331,24 @@ function App() {
                   onClick={(e) => openVisitorModal('tugas', e)}
                   className="rounded-full bg-black px-5 py-3 text-sm font-semibold text-white transition hover:bg-black/80 active:scale-95 touch-manipulation shadow-md flex items-center gap-2"
                 >
-                  <span>📝</span>
                   <span>Lihat Tugas</span>
                 </button>
                 <button
                   onClick={(e) => openVisitorModal('ulangan', e)}
                   className="rounded-full border border-black/20 bg-white px-5 py-3 text-sm font-semibold text-black transition hover:bg-black hover:text-white active:scale-95 touch-manipulation flex items-center gap-2"
                 >
-                  <span>📅</span>
                   <span>Lihat Ulangan</span>
                 </button>
                 <button
                   onClick={(e) => openVisitorModal('kisi', e)}
                   className="rounded-full border border-black/20 bg-white px-5 py-3 text-sm font-semibold text-black transition hover:bg-black hover:text-white active:scale-95 touch-manipulation flex items-center gap-2"
                 >
-                  <span>📌</span>
                   <span>Lihat Kisi-kisi</span>
                 </button>
                 <button
                   onClick={(e) => openVisitorModal('gallery', e)}
                   className="rounded-full border border-black/20 bg-white px-5 py-3 text-sm font-semibold text-black transition hover:bg-black hover:text-white active:scale-95 touch-manipulation flex items-center gap-2"
                 >
-                  <span>🖼️</span>
                   <span>Gallery Foto</span>
                 </button>
               </div>
@@ -400,45 +393,17 @@ function App() {
             </div>
           </section>
 
-          {/* RANDOM STUDENT / PIKET PICKER WHEEL */}
+          {/* RANDOM PICKER WHEEL */}
           <section className="mx-auto max-w-6xl px-5">
             <RandomPickerWheel />
           </section>
 
-          {/* INFO BANNER */}
-          <section className="mx-auto max-w-6xl px-5">
-            <div className="flex flex-col gap-5 rounded-3xl bg-white p-8 text-black sm:p-12 shadow-2xl relative overflow-hidden">
-              <div className="absolute -right-10 -bottom-10 w-60 h-60 bg-blue-600/20 rounded-full blur-3xl pointer-events-none" />
-              
-              <p className="text-xs uppercase tracking-[0.25em] text-emerald-400 font-semibold">
-                Class X-B · SMA Negeri 1 Pandaan
-              </p>
-
-              <h2 className="max-w-3xl text-3xl font-extrabold tracking-tight sm:text-5xl font-roboto">
-                One place. Everything we need.
-              </h2>
-
-              <p className="max-w-xl text-black/70 text-sm sm:text-base leading-relaxed">
-                Semua informasi penting di kelas akan di update secara berkala.
-              </p>
-
-              <div className="pt-2 flex flex-wrap gap-3">
-                <button
-                  onClick={(e) => openVisitorModal('tugas', e)}
-                  className="rounded-full bg-white text-black px-6 py-3 text-sm font-bold hover:bg-neutral-200 transition active:scale-95 touch-manipulation shadow-lg"
-                >
-                  Jelajahi Informasi Kelas
-                </button>
-              </div>
-            </div>
-          </section>
-
-          {/* ART OF XB CAROUSEL */}
+          {/* CAROUSEL */}
           <section className="space-y-4">
             <div className="mx-auto max-w-6xl px-5 flex items-center justify-between">
               <div>
-                <h3 className="text-2xl font-bold tracking-tight">📸 Galeri Momen Kelas X-B</h3>
-                <p className="text-xs text-black/50">Geser atau ketuk foto untuk melihat dalam tampilan interaktif.</p>
+                <h3 className="text-2xl font-bold tracking-tight">Gallery</h3>
+                <p className="text-xs text-black/50">Geser untuk geser klik untuk klik, anjas.</p>
               </div>
             </div>
 
@@ -474,11 +439,7 @@ function App() {
           {/* FLIP CARD BHUVANASURA */}
           <section className="mx-auto max-w-6xl px-5 py-8 flex flex-col items-center justify-center">
             <div className="text-center mb-6 max-w-md">
-              <span className="text-[11px] font-semibold tracking-widest uppercase text-blue-600 bg-blue-50 px-3 py-1 rounded-full">
-                Filosofi Bhuvanasura
-              </span>
-              <h3 className="text-2xl font-bold tracking-tight mt-2">X Bhuvanasura</h3>
-              <p className="text-xs text-black/50 mt-1">Klik untuk flip kartu</p>
+              <p className="text-xs text-black/50 mt-1">Klik untuk flip</p>
             </div>
 
             <FlipCard 
@@ -491,7 +452,7 @@ function App() {
               }
               back={
                 <div style={{ padding: 24 }} className="flex flex-col justify-center h-full text-center">
-                  <h3 className="font-bold text-xl text-amber-400">Filosofi Bhuvanasura</h3>
+                  <h3 className="font-bold text-xl text-blue-600">Filosofi Bhuvanasura</h3>
                   <div className="mt-4 space-y-3 text-xs leading-relaxed text-zinc-200">
                     <p><strong className="text-white">Bhuvana:</strong> Tegese dunya, bumi, jagad, utawa papan panggonan.</p>
                     <p><strong className="text-white">Asura:</strong> Tegese kekuatan besar, raksasa, lan semangat pantang menyerah.</p>
@@ -525,7 +486,9 @@ function App() {
           </section>
 
           {/* MESSAGE */}
-          <div>
+          <div className="">
+            <h1 className="justify-center text-center text-3xl font-roboto">Speak to Bhuvanasura</h1>
+
             <Stepper
               initialStep={1}
               onStepChange={(step) => {
@@ -553,14 +516,14 @@ function App() {
 
                   console.log('Message was recorded')
               }}
-              backButtonText="Back"
-              nextButtonText="Next"
+              backButtonText="Kembali"
+              nextButtonText="Lanjut"
             >
               <Step>
                 <div className="font-roboto text-sm text-black/70">
                   <h2>Pernah ga si....</h2>
                   <p>Mau ngomong langsung kayak malu gitu!?</p>
-                  <p>Gimana kalo kita adain <strong>BOTB - BHUVANASURA ONTO THE BOX</strong></p>
+                  <p>Gimana kalo kita adain <strong className="font bold">Speak to Bhuvanasura</strong></p>
                 </div>
               </Step>
               <Step>
@@ -582,8 +545,15 @@ function App() {
                 <textarea value={form.message} onChange={(e) => setForm({ ...form, message: e.target.value })} placeholder="Pesanmu apa nih...." rows={5} />
               </Step>
               <Step>
-                <h2 className="font-bold">WEIT WEIT</h2>
-                <p>udah bener kan? datamu ke record ke database loh nanti</p>
+                <h2 className="font-bold">Persetujuan</h2>
+                <p>Data yang kamu masukin nanti dibuat sebagai kritik</p>
+                <p>jika semua suara telah terkumpul (mingguan) maka akan ditampilkan</p>
+                <p className="font-bold">Setuju ga datamu bakalan di tampilin</p>
+              </Step>
+              <Step>
+                <h1 className="font-bold">NICE!</h1>
+                <p>Klik Complete buat record datanya ke database</p>
+                <p>nanti admin yang ngatur :3</p>
               </Step>
             </Stepper>
           </div>
@@ -610,9 +580,16 @@ function App() {
 
           <div className="justify-center flex items-center">
             <FolderFloat
-              items={['Bu Ratna', 'Bu Ratna', 'Bu Ratna', 'Bu Ratna', 'Bu Ratna',]}
+              items={[
+                'Adid', 'Ardyan', 'Alena', 'Vita', 'Abel', 'Cellen', 'Citra',
+                'Clara', 'Fahri', 'Faishal', 'Faris', 'Hanun', 'Jasmine',
+                'Jelita', 'Ami', 'Naila', 'Kayla', 'Khalista', 'Keke', 'Laila',
+                'Balqhis', 'Lintang', 'Elin', 'Zaka', 'Rama', 'Rizki', 'Lala',
+                'Nadin', 'Nazril', 'Qina', 'Maulida', 'Rafa', 'Angga', 'Arka', 'Shinta',
+                'Shofi', 'Bu Ratna', 'Bu Ratna', 'Bu Ratna', 'Bu Ratna'
+              ]}
               label="Beloved People"
-              sublabel="5 notes"
+              sublabel="40 notes"
               trigger="hover"
               closeOnSelect
               physics
@@ -641,7 +618,7 @@ function App() {
           {/* FOOTER */}
           <footer className="border-t border-black/10 py-10 text-center">
             <p className="font-roboto text-xs text-black/60">
-              Made with ❤️ by Human.
+              Made with ❤️ by Someone.
             </p>
           </footer>
         </main>
